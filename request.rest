@@ -1,0 +1,57 @@
+###
+
+POST https://localhost:3000/planner/todo HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3A-MycOon4-wsYdoGq4mRfk6_5s_NuvG8_.QPtmQOZ0Srz2zLvNl2A6P32PoIADOE%2FiFEIWe8FnQ6s
+
+{
+    "name": "TODO 2",
+    "text": "321",
+    "datetime": "2021-02-12T00:10:00",
+    "completed": false
+}
+
+###
+
+GET https://localhost:3000/planner/todo HTTP/1.1
+#auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI1NDdmMjRkMGFhMzE5MTM2ZTZkYzkiLCJpYXQiOjE2MTMwNTgyNDZ9.IxWnOzsY5GfUw9Vd4gMVi97_K0COJf5Gp1GaNRkdmrc
+
+###
+
+GET https://localhost:3000/planner/todo/6022295b831129245c56ba4 HTTP/1.1
+
+###
+
+DELETE https://localhost:3000/planner/todo/602228fe831129245c56ba47 HTTP/1.1
+
+###
+
+PATCH https://localhost:3000/planner/todo/6022295b831129245c56ba4 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "TODO 2 New",
+    "text": "TODO text 2",
+    "done": true
+}
+
+###
+POST https://localhost:3000/api/user/register HTTP/1.1
+content-type: application/json
+
+{
+    "username": "johnsy1",
+    "email": "123@gmail.com",
+    "password": "123456"
+}
+
+###
+POST https://localhost:3000/api/user/login HTTP/1.1
+content-type: application/json
+
+{
+    "login": "johnsy1",
+    "password": "123456"
+}
+
+
