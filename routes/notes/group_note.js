@@ -5,7 +5,7 @@ module.exports = function (router, ensureAuth) {
 
     // @desc    Get notes
     // @route   GET /notes/note
-    router.get('/', ensureAuth, async (req, res) => {
+    router.get('/notes', ensureAuth, async (req, res) => {
         try {
             const notes = await Note.find({ group: req.params.groupId }).sort({ createdAt: 'desc' });
             res.json(notes);
@@ -15,10 +15,10 @@ module.exports = function (router, ensureAuth) {
     });
 
     // @desc    Save note
-    // @route   GET /notes/note
-    router.post('/', ensureAuth, async (req, res) => {
+    // @route   POST /notes/note
+    router.post('/notes', ensureAuth, async (req, res) => {
         try {
-            req.body.user = req.user.id
+            req.body.group = req.params.groupId
             const note = await Note.create(req.body);
             res.json(note);
         } catch (error) {
@@ -28,15 +28,14 @@ module.exports = function (router, ensureAuth) {
 
     // @desc    Get specific note
     // @route   GET /notes/note/:noteId
-    router.get('/note/:noteId', ensureAuth, async (req, res) => {
+    router.get('/notes/note/:noteId', ensureAuth, async (req, res) => {
         try {
             const note = await Note.findById(req.params.noteId);
-
             if (!note) {
                 return res.json('404 Error');
             }
 
-            if (note.user != req.user.id) {
+            if (note.group != req.params.groupId) {
                 res.json('404 Error');
             } else {
                 res.json(note);
@@ -48,7 +47,7 @@ module.exports = function (router, ensureAuth) {
 
     // @desc    DELETE note
     // @route   DELETE /notes/note/:noteId
-    router.delete('/note/:noteId', ensureAuth, async (req, res) => {
+    router.delete('/notes/note/:noteId', ensureAuth, async (req, res) => {
         try {
             let note = await Note.findById(req.params.noteId);
             
@@ -56,7 +55,7 @@ module.exports = function (router, ensureAuth) {
                 return res.json('404 Error');
             }
             
-            if (note.user != req.user.id) {
+            if (note.group != req.params.groupId) {
                 return res.json('500 Error');
             } else {
                 note = await Note.remove(
@@ -71,7 +70,7 @@ module.exports = function (router, ensureAuth) {
 
     // @desc    UPDATE note
     // @route   PUT /notes/note/noteId
-    router.patch('/note/:noteId', ensureAuth, async (req, res) => {
+    router.patch('/notes/note/:noteId', ensureAuth, async (req, res) => {
         try {
             let note = await Note.findById(req.params.noteId);
             
@@ -79,12 +78,12 @@ module.exports = function (router, ensureAuth) {
                 return res.json('404 Error');
             }
 
-            if (note.user != req.user.id) {
+            if (note.group != req.params.groupId) {
                 return res.json('404 Error');
             } else {
                 note = await Note.updateOne(
                     { _id: req.params.noteId },
-                    { $set: { name: req.body.name, text: req.body.text, datetime: req.body.datetime, completed: req.body.completed } }
+                    { $set: { name: req.body.name, text: req.body.text } }
                 );
                 return res.json(note);
             }
@@ -92,4 +91,6 @@ module.exports = function (router, ensureAuth) {
             res.json({ message: error });
         }
     });
+
+    return router;
 }

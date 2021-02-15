@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const NoteGroupSchema = new Schema({
+const BillingGroupSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -16,5 +16,5 @@ const NoteGroupSchema = new Schema({
     }
 }, { timestamps: true });
 
-const NoteGroup = mongoose.model('NoteGroup', NoteGroupSchema);
-module.exports = NoteGroup;
+const BillingGroup = mongoose.model('BillingGroup', BillingGroupSchema);
+module.exports = BillingGroup;

@@ -155,17 +155,17 @@ Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp
 
 ###
 
-GET https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+GET https://localhost:3000/notes/note/602a9ffc4b77ef505c08a12b HTTP/1.1
 Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 ###
 
-DELETE https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+DELETE https://localhost:3000/notes/note/602a9ffc4b77ef505c08a12b HTTP/1.1
 Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 ###
 
-PATCH https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+PATCH https://localhost:3000/notes/note/602a9ffc4b77ef505c08a12b HTTP/1.1
 content-type: application/json
 Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
@@ -175,3 +175,133 @@ Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp
     "time": "00:10:00",
     "completed": true
 }
+
+#              #
+#   MEETINGS   #
+#              #
+
+###
+
+POST https://localhost:3000/planner/meeting HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST",
+    "text": "TEST",
+    "datetime": "2021-02-20T00:00:00",
+    "completed": false
+}
+
+###
+
+GET https://localhost:3000/planner/meeting HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "11111",
+    "text": "22222",
+    "datetime": "2021-02-20T00:10:00",
+    "completed": true
+}
+
+#           #
+#   NOTES   #
+#           #
+
+###
+
+POST https://localhost:3000/notes/group HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST Note Group 2",
+    "text": "TEST"
+}
+
+###
+
+GET https://localhost:3000/notes/group HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/notes/group/602aa0314b77ef505c08a12c HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/notes/group/602aa0314b77ef505c08a12c HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/notes/group/602aa0314b77ef505c08a12c HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "11111",
+    "text": "22222",
+    "time": "00:10:00",
+    "completed": true
+}
+
+#                 #
+#   NOTE GROUPS   #
+#                 #
+
+###
+
+POST https://localhost:3000/notes/group/602a8c30a8b8b2028c1d628e/notes HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST Note",
+    "text": "TEST"
+}
+
+###
+
+GET https://localhost:3000/notes/group/602a8c30a8b8b2028c1d628e/notes HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/notes/group/602a8c30a8b8b2028c1d628e/notes/note/602a925594ae6a242a7f936e HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/notes/group/602a8c30a8b8b2028c1d628e/notes/note/602a925594ae6a242a7f936e HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/notes/group/602a8c30a8b8b2028c1d628e/notes/note/602a925594ae6a242a7f936e HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "11111",
+    "text": "22222"
+}
+

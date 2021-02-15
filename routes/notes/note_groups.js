@@ -30,7 +30,7 @@ module.exports = function (router, ensureAuth) {
     // @route   GET /planner/noteGroup/:noteGroupId
     router.get('/group/:groupId', ensureAuth, async (req, res) => {
         try {
-            const noteGroup = await NoteGroup.findById(req.params.groupId);
+            const noteGroup = await (await NoteGroup.findById(req.params.groupId));
 
             if (!noteGroup) {
                 return res.json('404 Error');
@@ -91,5 +91,9 @@ module.exports = function (router, ensureAuth) {
         } catch (error) {
             res.json({ message: error });
         }
+
     });
+
+    const groupNotesRoute = require("./group_note")(router, ensureAuth);
+    router.use('/group/:groupId', groupNotesRoute);
 }

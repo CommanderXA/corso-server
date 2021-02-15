@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const NoteSchema = new Schema({
+const BillingSchema = new Schema({
     name: {
         type: String,
         required: true,
@@ -10,11 +10,15 @@ const NoteSchema = new Schema({
     text: {
         type: String
     },
+    amount: {
+        type: String,
+        required: true
+    },
     group: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'NoteGroup'
+        ref: 'BillingGroup'
     }
 }, { timestamps: true });
 
-const Note = mongoose.model('Note', NoteSchema);
-module.exports = Note;
+const Billing = mongoose.model('Billing', BillingSchema);
+module.exports = Billing;
