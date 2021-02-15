@@ -48,15 +48,9 @@ const bodyParser = require("body-parser");
 app.use(cors());
 app.use(bodyParser.json());
 
-// Import Routes
-const indexRoute = require("./routes/index");
-const plannerRoute = require("./routes/planner");
-const authRoute = require("./routes/auth");
-
-// Route Middlewares
-app.use('/', indexRoute);
-app.use('/planner', plannerRoute);
-app.use('/auth', authRoute);
+// Routes
+const routes = require("./routes/index")(app);
+routes
 
 // Connect to MongoDB
 connectDB();

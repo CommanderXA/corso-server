@@ -1,17 +1,21 @@
-const express = require("express");
-const router = express.Router();
-const { ensureAuth, ensureGuest } = require("../middleware/auth");
+const { ensureAuth } = require("../middleware/auth");
 
-// @desc    Home page
-// @route   Get /
-router.get('/', ensureAuth, (req, res) => {
-    res.send('Welcome to the home page ' + req.user.firstName);
-});
+// Import Routes
+const authRoute = require("./auth");
+const plannerRoute = require("./planner/planner");
+const notesRoute = require("./notes/notes_routes");
 
-// @desc    Login page
-// @route   Get /
-router.get('/login', ensureGuest, (req, res) => {
-    res.send('Login');
-});
+// module.exports = router;
 
-module.exports = router;
+module.exports = function (app) {
+
+    // @desc    Home page
+    // @route   Get /
+    app.get('/', ensureAuth, (req, res) => {
+        res.send('Welcome to the home page ' + req.user.firstName);
+    });
+
+    app.use('/planner', plannerRoute);
+    app.use('/auth', authRoute);
+    app.use('/notes', notesRoute);
+}

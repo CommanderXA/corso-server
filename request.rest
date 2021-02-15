@@ -1,57 +1,177 @@
+#           #
+#   TODOS   #
+#           #
+
 ###
 
 POST https://localhost:3000/planner/todo HTTP/1.1
 content-type: application/json
-Cookie: connect.sid=s%3A-MycOon4-wsYdoGq4mRfk6_5s_NuvG8_.QPtmQOZ0Srz2zLvNl2A6P32PoIADOE%2FiFEIWe8FnQ6s
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 {
-    "name": "TODO 2",
-    "text": "321",
-    "datetime": "2021-02-12T00:10:00",
+    "name": "TEST",
+    "text": "TEST",
+    "datetime": "2021-02-20T00:00:00",
     "completed": false
 }
 
 ###
 
 GET https://localhost:3000/planner/todo HTTP/1.1
-#auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MDI1NDdmMjRkMGFhMzE5MTM2ZTZkYzkiLCJpYXQiOjE2MTMwNTgyNDZ9.IxWnOzsY5GfUw9Vd4gMVi97_K0COJf5Gp1GaNRkdmrc
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 ###
 
-GET https://localhost:3000/planner/todo/6022295b831129245c56ba4 HTTP/1.1
+GET https://localhost:3000/planner/todo/602a320968a7c45c997b77c2 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 ###
 
-DELETE https://localhost:3000/planner/todo/602228fe831129245c56ba47 HTTP/1.1
+DELETE https://localhost:3000/planner/todo/602a324968a7c45c997b77c5 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 ###
 
-PATCH https://localhost:3000/planner/todo/6022295b831129245c56ba4 HTTP/1.1
+PATCH https://localhost:3000/planner/todo/602a324968a7c45c997b77c5 HTTP/1.1
 content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 {
-    "name": "TODO 2 New",
-    "text": "TODO text 2",
-    "done": true
+    "name": "11111",
+    "text": "22222",
+    "datetime": "2021-02-20T00:10:00",
+    "completed": true
+}
+
+#              #
+#   MEETINGS   #
+#              #
+
+###
+
+POST https://localhost:3000/planner/meeting HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST",
+    "text": "TEST",
+    "datetime": "2021-02-20T00:00:00",
+    "completed": false
 }
 
 ###
-POST https://localhost:3000/api/user/register HTTP/1.1
+
+GET https://localhost:3000/planner/meeting HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
 content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 {
-    "username": "johnsy1",
-    "email": "123@gmail.com",
-    "password": "123456"
+    "name": "11111",
+    "text": "22222",
+    "datetime": "2021-02-20T00:10:00",
+    "completed": true
+}
+
+#          #
+#   PLAN   #
+#          #
+
+###
+
+POST https://localhost:3000/planner/plan HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST PLAN",
+    "text": "TEST",
+    "time": "00:00:00",
+    "completed": false
 }
 
 ###
-POST https://localhost:3000/api/user/login HTTP/1.1
+
+GET https://localhost:3000/planner/plan HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/planner/plan/602a3d6db1d8f3779527656a HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/planner/plan/602a3d6db1d8f3779527656a HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/planner/plan/602a3d6db1d8f3779527656a HTTP/1.1
 content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
 
 {
-    "login": "johnsy1",
-    "password": "123456"
+    "name": "11111",
+    "text": "22222",
+    "time": "00:10:00",
+    "completed": true
 }
 
+#           #
+#   NOTES   #
+#           #
 
+###
+
+POST https://localhost:3000/notes HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "TEST Note 2",
+    "text": "TEST"
+}
+
+###
+
+GET https://localhost:3000/notes HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+GET https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+DELETE https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+###
+
+PATCH https://localhost:3000/notes/note/602a6cd049b3e41ab84601ea HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+
+{
+    "name": "11111",
+    "text": "22222",
+    "time": "00:10:00",
+    "completed": true
+}
