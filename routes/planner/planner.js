@@ -1,6 +1,6 @@
 const express = require("express");
 const { ensureAuth } = require("../../middleware/auth");
-const router = express.Router();
+const router = express.Router({mergeParams: true});
 
 router.get('/', (req, res) => {
     res.send('Planner');

@@ -51,11 +51,11 @@ Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp
 
 POST https://localhost:3000/planner/meeting HTTP/1.1
 content-type: application/json
-Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+Cookie: connect.sid=s%3Aj6_aq47osJvGWE3t_GbfqFHwnxerd3AR.a7n2FJ7UfVMFV7yIrs7BCa308pRy41V8qWJvFbQakIA
 
 {
-    "name": "TEST",
-    "text": "TEST",
+    "name": "TEST 222",
+    "text": "TEST 222",
     "datetime": "2021-02-20T00:00:00",
     "completed": false
 }
@@ -63,23 +63,23 @@ Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp
 ###
 
 GET https://localhost:3000/planner/meeting HTTP/1.1
-Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+Cookie: connect.sid=s%3Aj6_aq47osJvGWE3t_GbfqFHwnxerd3AR.a7n2FJ7UfVMFV7yIrs7BCa308pRy41V8qWJvFbQakIA
 
 ###
 
-GET https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
-Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+GET https://localhost:3000/planner/meeting/602be6c4cf9e886686e5f110 HTTP/1.1
+Cookie: connect.sid=s%3Aj6_aq47osJvGWE3t_GbfqFHwnxerd3AR.a7n2FJ7UfVMFV7yIrs7BCa308pRy41V8qWJvFbQakIA
 
 ###
 
-DELETE https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
-Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+DELETE https://localhost:3000/planner/meeting/602be6c4cf9e886686e5f110 HTTP/1.1
+Cookie: connect.sid=s%3Aj6_aq47osJvGWE3t_GbfqFHwnxerd3AR.a7n2FJ7UfVMFV7yIrs7BCa308pRy41V8qWJvFbQakIA
 
 ###
 
-PATCH https://localhost:3000/planner/meeting/602a352074bdc969f5d41788 HTTP/1.1
+PATCH https://localhost:3000/planner/meeting/602be6c4cf9e886686e5f110 HTTP/1.1
 content-type: application/json
-Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp1xYr%2FtZPdKqRZY4BygKU
+Cookie: connect.sid=s%3Aj6_aq47osJvGWE3t_GbfqFHwnxerd3AR.a7n2FJ7UfVMFV7yIrs7BCa308pRy41V8qWJvFbQakIA
 
 {
     "name": "11111",
@@ -305,3 +305,44 @@ Cookie: connect.sid=s%3AXRRnbtYQLrMAnzRfm_vVHvIyboD0RdbY.eGG6ueLIvX7o8X1M2OAXeHp
     "text": "22222"
 }
 
+
+#              #
+#   Projects   #
+#              #
+
+###
+
+POST https://localhost:3000/projects HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3ARJ3v5goxiYo1FO_cOLFSIJcF4Y52J9d6.fXDQDFVDL2IovrAEEtZ9SMLi9gE4ZBJaxwvCQWeKsX0
+
+{
+    "name": "TEST PLAN",
+    "text": "TEST"
+}
+
+###
+
+GET https://localhost:3000/projects HTTP/1.1
+Cookie: connect.sid=s%3ARJ3v5goxiYo1FO_cOLFSIJcF4Y52J9d6.fXDQDFVDL2IovrAEEtZ9SMLi9gE4ZBJaxwvCQWeKsX0
+
+###
+
+GET https://localhost:3000/projects/602bfe13e6edfb34a22f6bbd HTTP/1.1
+Cookie: connect.sid=s%3ARJ3v5goxiYo1FO_cOLFSIJcF4Y52J9d6.fXDQDFVDL2IovrAEEtZ9SMLi9gE4ZBJaxwvCQWeKsX0
+
+###
+
+DELETE https://localhost:3000/projects/602c000814647b3a2b0b9bde HTTP/1.1
+Cookie: connect.sid=s%3ARJ3v5goxiYo1FO_cOLFSIJcF4Y52J9d6.fXDQDFVDL2IovrAEEtZ9SMLi9gE4ZBJaxwvCQWeKsX0
+
+###
+
+PATCH https://localhost:3000/projects/602bfe13e6edfb34a22f6bbb HTTP/1.1
+content-type: application/json
+Cookie: connect.sid=s%3ARJ3v5goxiYo1FO_cOLFSIJcF4Y52J9d6.fXDQDFVDL2IovrAEEtZ9SMLi9gE4ZBJaxwvCQWeKsX0
+
+{
+    "name": "11111",
+    "text": "22222"
+}

@@ -18,9 +18,9 @@ const MeetingSchema = new Schema({
         type: Boolean,
         required: true
     },
-    user: {
+    planner: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'Planner'
     }
 }, { timestamps: true });
 
